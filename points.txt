@@ -1,0 +1,69 @@
+1)
+pozdrav
+Kdo se už někdy setkal s obfuskací?
+Proč jim o tom vykládám? - Byla to moje bakalářka.
+
+2)
+vysvětlit že jsem práci dělal v Brně
+Co bylo celková náplň práce?
+Co mě přimělo si zvolit takové téma? - chtěl jsem si napsat překladač svého jazyka
+Jak to souvisí s obfuskací? - prostor pro vyzkoušení netradičních technik
+
+3)
+Jak to dopadlo? - Tedy co vlastně byly výstupy té práce
+
+- Překladač
+    dle zadání jsem vytvořil vlastní programovací jazyk
+    (NAPSAT NA TABULI) Jabukód - popsat jak to vzniklo
+
+- Generující cílový kód
+    Je to na bázi C (ze zadání), proto binárka
+    výstupem je binární kód, ačkoli je více možností obfuskace (zdrojový, mezikód, binární kód)
+
+- Odolný proti zpětné analýze
+    gró práce - produkovat chráněný binární kód přímo jako výstup překladu
+    Kromě už zaběhlých metod jsem také implementoval určité, které jsem si sám navrhl. Obojí vám tady dneska představím a popíšu.
+
+4)
+Ve své práci jsem měl teoretickou část, ale to už asi znáte, tak to přeskočíme a přejdeme na to zajímavé.
+POSLAT VÝTISK - obfuskace je kapitola 5 a v přílohách je celá gramatika
+              - Pokud by někdo měl nějaké otázky i k tomu, jak jsem to implementoval, neváhejte se zeptat.
+
+- Nejprve z opačné strany -
+    - Proč se chceme věnovat zpětné analýze? - postrádáme znalosti - není dokumentace, tvůrce ji nechce sdílet
+                                                - ve vývoji - znovupoužitelnost
+                                                - bezpečnost - odhalování skrytých hrozeb
+
+- Jak to děláme? - disaseblery, debuggery, dekompilátory,
+                   tracing nástroje (strace, perf), patching nástroje, dumping nástroje (readelf, objdump, crash)
+    popsat JAK FUNGUJÍ a K ČEMU SLOUŽÍ
+
+5)
+- Z toho co jsem popsal je zřejmé, že se potřebujeme zpětné analýze i bránit
+    - ochrana intelektuálního vlastnictví
+    - identifikace škodlivého kódu
+
+- dokonalá ochrana je nemožná
+    - Cíl je ji učinit nerealistickou
+
+- řada metod - odstraňování symbolických informací, šifrování kódu, antidebugging, HLAVNĚ obfuskace
+    popsat JAK FUNGUJÍ a K ČEMU SLOUŽÍ
+
+6)
+Popsat jednotlivé části definice
+- Proč je obfuskace lepší? - je robustnější, silnější a není tak principielně jednoduchá
+
+7)
+ke každému druhy uvést nějaké příklady a v čem se liší
+zmínit ezo obfuskátory (JSFuck, MOVfuscator) - zeptat se jestli o nich někdo slyšel a setkal se s nima
+Znáte někdo nějaké další ezo obfuskátory?
+
+8)
+síla - míra přidané složitosti pro analýzu
+skrytost - obfuskace se obtížně identifukuje a její princip je obtížně pochopitelný
+odolnost - obfuskace se obtížně odstraňuje
+
+cena - zpomalení, zvětšení binárního souboru, množství alokované paměti
+
+9)
+

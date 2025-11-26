@@ -1,6 +1,13 @@
 \documentclass[]{beamer}
-    \usepackage[czech]{babel}
     \usepackage[utf8]{inputenc}
+    \usepackage[czech]{babel}
+    %\usepackage{times}
+    %\usepackage[hidelinks]{hyperref}
+    \usepackage{graphicx}
+        \graphicspath{{./images/}}
+    \usepackage{float}
+    \usepackage[dvipsnames]{xcolor}
+    \usepackage{tikz}
 
     \usetheme{Madrid}
     \usecolortheme{default}
@@ -8,59 +15,141 @@
     \setbeamertemplate{blocks}[rounded][shadow=true]
 
     \title[Základy obfuskace]{Základy obfuskace}
-    \subtitle[]{aneb jak vývojáři efektivně zkazit den}
+    \subtitle[]{Aneb jaký užitek má nečitelný kód?}
     \author[]{Bc.\ Martin Jabůrek}
     \institute[PRG PRG]{Student Programming Language Meetup}
     \date[]{28.\ listopadu\ 2025}
+
+\newcommand{\image}[3]{ % args: size, path, caption
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#1\textwidth]{#2}%\caption{#3}
+        \label{fig:\thefigure}
+    \end{figure}
+}
+
+\newcommand{\Image}[5]{ % args x, y, scale, path, caption
+    \begin{tikzpicture}[remember picture, overlay]
+        \node at (#1, #2) { \includegraphics[scale=#3]{#4} };
+        % \node[below] at (#1, #2) {#5};
+    \end{tikzpicture}
+}
 
 \begin{document}
 
 \frame{\titlepage}
 
 \begin{frame}
-    \frametitle{Jak to začalo?}
+    \frametitle{Moje bakalářka}
 
-    fotky ze screenhotů s Adamem co jsem našel (IAN (vyrval jsem v projektu 3 ten zdroják)
-    to BP (překladač))
+    \Image{6}{0}{0.25}{screen_VUT_web.png}
     
 \end{frame}
 
 \begin{frame}
     \frametitle{Jak to dopadlo?}
 
-    screenshot stránky s BP\\
-    screenshot co psala Verča u státnic
+    \begin{itemize}
+        \pause{}
+        \item Překladač \dots
+        \pause{}
+        \item \dots generující cílový kód \dots
+        \pause{}
+        \item \dots odolný proti zpětné analýze
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Zpětná analýza}
+
+    \begin{itemize}
+        \item Proč zpětná analýza?
+        \pause{}
+        \item Jaké máme pro zpětnou analýzu prostředky?
+        \pause{}
+        \begin{itemize}
+            \item Disasseblery
+            \pause{}
+            \item Debuggery
+            \pause{}
+            \item Dekompilátory
+            \pause{}
+            \item Tracing nástroje
+            \pause{}
+            \item Pathing nástroje
+            \pause{}
+            \item Dumping nástroje
+        \end{itemize}
+    \end{itemize}
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Ochrana proti zpětné analýze}
 
-    proč?
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{A jak jsem to udělal já?}
-
-    Jabukód
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{Metody}
-
-    výpis a komentář
+    \begin{itemize}
+        \item Proč se proti ní potřebujeme bránit?
+        \pause{}
+        \item Co je cílem ochrany proti zpětné analýze?
+        \pause{}
+        \item Jaké máme metody ochrany proti zpětné analýze?
+        \pause{}
+        \begin{itemize}
+            \item Odstraňování symbolických informací
+            \pause{}
+            \item Šifrování kódu
+            \pause{}
+            \item Antidebugging
+            \pause{}
+            \item \textbf{Obfuskace}
+        \end{itemize}
+    \end{itemize}
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Obfuskace}
 
-    teorie\\
-    druhy\\
-    metriky\\
-    něco říct o revech (zmínit hantec)
+    \textbf{Obfuskace} kódu představuje jednosměrnou transoformaci kódu za zachování
+    jeho pozorovatelného chování.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Způsoby obfuskace}
+
+    Obfuskace:
+    \begin{itemize}
+        \pause{}
+        \item zdrojových kódů
+        \pause{}
+        \item bytekódů
+        \pause{}
+        \item binárních kódů
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Hodnocení obfuskace}
+
+    \begin{itemize}
+        \item Síla obfuskace\,--\,\emph{potency}
+        \pause{}
+        \item Skrytost
+        \pause{}
+        \item Odolnost\,--\,\emph{resilience}
+        \begin{itemize}
+            \pause{}
+            \item Proti manuální zpětné analýze
+            \pause{}
+            \item Proti automatizované zpětné analýze
+        \end{itemize}
+        \pause{}
+        \item[ ]
+        \item Cena
+    \end{itemize}
 
 \end{frame}
 
