@@ -46,7 +46,7 @@ POSLAT VÝTISK - obfuskace je kapitola 5 a v přílohách je celá gramatika
 - dokonalá ochrana je nemožná
     - Cíl je ji učinit nerealistickou
 
-- řada metod - odstraňování symbolických informací, šifrování kódu, antidebugging, HLAVNĚ obfuskace
+- řada metod - odstraňování symbolických informací, šifrování kódu, antidebugging, Saas - důvěryhodný nativní kód, HLAVNĚ obfuskace
     popsat JAK FUNGUJÍ a K ČEMU SLOUŽÍ
 
 6)
@@ -66,6 +66,7 @@ odolnost - obfuskace se obtížně odstraňuje
 cena - zpomalení, zvětšení binárního souboru, množství alokované paměti
 
 9)
+rozlišujeme jisté základní členění
 výpočetní transformace - složitější struktura a horší převoditelnost do vysokoúrovňové reprezentace
 seksupovací transformace - úplné odstranění vysokoúrovňových konstrukcí daného jazyka
 transformace pořadí - změna pořadí instrukcí či bloku pro zhoršení pochopitelnosti
@@ -78,4 +79,9 @@ TODO
 ZMÍNIT VLASTNÍ (NAPSAT NA TABULI)
 - odstranění / šifrování / FALŠOVÁNÍ symbolických informací
 - OBFUSKACE ZNAMÉNKOVOSTI
-- nové konstrukce
+- nové konstrukce (redo, restart)
+
+
+-1)
+děkuji za pozornost
+Teď já mám otázku na vás, jaké máte se zpětnou analýzou zkušenosti vy?

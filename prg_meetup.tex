@@ -50,7 +50,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Jak to dopadlo?}
+    \frametitle{Proces řešení}
 
     \begin{itemize}
         \pause{}
@@ -105,6 +105,8 @@
             \pause{}
             \item Antidebugging
             \pause{}
+            \item SaaS
+            \pause{}
             \item \textbf{Obfuskace}
         \end{itemize}
     \end{itemize}
@@ -114,7 +116,7 @@
 \begin{frame}
     \frametitle{Obfuskace}
 
-    \textbf{Obfuskace} kódu představuje jednosměrnou transoformaci kódu za zachování
+    \textbf{Obfuskace} kódu představuje jednosměrnou transformaci kódu za zachování
     jeho pozorovatelného chování.
 
 \end{frame}
@@ -171,7 +173,7 @@
             \item Transformace pořadí\,--\,\emph{Ordering transformation}
         \end{itemize}
         \pause{}
-        \item Transformace data
+        \item Transformace dat
     \end{itemize}
 
 \end{frame}
@@ -184,6 +186,20 @@
     na každou slide\\
     porovnání dvěma bloky asembleru co to vygeneruje\\
     nějaká moudrá slova k tomu a crowd participation
+
+    opaque predicates, control flow flattening (tabulková interpretace), mrtvý kód, klonování kódu,
+    interleaving, změna kódování, změna struktury polí, expanze literálu,
+    obfuskace optimalizacemi, úprava symbolických informací, střídání instrukcí,
+    inlining, outlining
+
+    rozšíření podmínek, odstranění knihovních volání a programovacích idiomů,
+    přidání redundatních argumentů, paralelizace kódu, loop blocking, loop unrolling,
+    loop fission
+
+    obfuskace datového typu, falšování symbolických informací
+
+    TODO další věci přímo v jazyce a popsat ten jazyk
+    foreach, redo, restart (proč to obfuskuje), 
 
 \end{frame}
 
@@ -221,10 +237,10 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Crowd participation}
+    \frametitle{Díky za pozornost!}
 
-    zkušenosti lidí v praxi\\
-    nenávistné poznámky od lidí co to museli řešit
+    \pause{}
+    \centering{A jaké máte s obfuskací zkušenosti vy?}
 
 \end{frame}
 
