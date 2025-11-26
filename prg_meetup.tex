@@ -9,6 +9,9 @@
     \usepackage[dvipsnames]{xcolor}
     \usepackage{tikz}
 
+    \usepackage[outputdir=build]{minted}
+    \usemintedstyle{friendly}
+
     \usetheme{Madrid}
     \usecolortheme{default}
     %\usefonttheme{wolverine}
@@ -137,7 +140,7 @@
     \begin{itemize}
         \item Síla obfuskace\,--\,\emph{potency}
         \pause{}
-        \item Skrytost
+        \item Skrytost\,--\,\emph{concealment}
         \pause{}
         \item Odolnost\,--\,\emph{resilience}
         \begin{itemize}
@@ -156,26 +159,65 @@
 \begin{frame}
     \frametitle{Různé druhy obfuskace}
 
+    \begin{itemize}
+        \pause{}
+        \item Transformace toku řízení
+        \begin{itemize}
+            \pause{}
+            \item Výpočetní transformace\,--\,\emph{Computation transformation}
+            \pause{}
+            \item Seskupovací transformace\,--\,\emph{Aggregation transformation}
+            \pause{}
+            \item Transformace pořadí\,--\,\emph{Ordering transformation}
+        \end{itemize}
+        \pause{}
+        \item Transformace data
+    \end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Titulek}
+
     na každou slide\\
     porovnání dvěma bloky asembleru co to vygeneruje\\
     nějaká moudrá slova k tomu a crowd participation
 
 \end{frame}
 
-\begin{frame}
-    \frametitle{Titulek}
+\begin{frame}[fragile]{Side-by-Side Assembly Examples}
 
-    \begin{block}{Blok}
-        text
-    \end{block}
+    \begin{columns}[T,onlytextwidth]
 
-    \pause{}
+        \begin{column}{0.48\textwidth}
+        \begin{block}{Example 1: Move and Add}
+        \begin{minted}[fontsize=\scriptsize]{asm}
+        .intel_syntax noprefix
+        mov rax, 5
+        add rax, 10
+        mov rbx, rax
+        \end{minted}
+        \end{block}
+        \end{column}
 
-    \begin{itemize}
-        \item položka
-        \pause{}
-        \item položka
-    \end{itemize}
+        \begin{column}{0.48\textwidth}
+        \setbeamercolor{block title}{bg=green!60!black, fg=white}
+        \setbeamercolor{block body}{bg=green!10, fg=black}
+        \begin{block}{Example 2: Loop Structure}
+        \begin{minted}[fontsize=\scriptsize]{asm}
+        .intel_syntax noprefix
+        mov rcx, 10
+        loop_start:
+            dec rcx
+            jnz loop_start
+        \end{minted}
+        \end{block}
+        \end{column}
+
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}

@@ -66,4 +66,16 @@ odolnost - obfuskace se obtížně odstraňuje
 cena - zpomalení, zvětšení binárního souboru, množství alokované paměti
 
 9)
+výpočetní transformace - složitější struktura a horší převoditelnost do vysokoúrovňové reprezentace
+seksupovací transformace - úplné odstranění vysokoúrovňových konstrukcí daného jazyka
+transformace pořadí - změna pořadí instrukcí či bloku pro zhoršení pochopitelnosti
 
+transformace dat - upravují uložení, zpracování a interpretaci dat programu
+
+10)
+TODO
+
+ZMÍNIT VLASTNÍ (NAPSAT NA TABULI)
+- odstranění / šifrování / FALŠOVÁNÍ symbolických informací
+- OBFUSKACE ZNAMÉNKOVOSTI
+- nové konstrukce

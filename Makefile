@@ -9,7 +9,7 @@ all: $(TARGET)
 
 $(TARGET): $(SRC)
 	mkdir -p $(BUILD_DIR)
-	latexmk -pdf -outdir=$(BUILD_DIR) $<
+	latexmk -pdf -outdir=$(BUILD_DIR) -shell-escape $<
 	cp $(BUILD_DIR)/$@ ./$@
 
 clean:
