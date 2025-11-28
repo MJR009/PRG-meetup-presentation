@@ -185,18 +185,74 @@
 
 
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Neprůhledné predikáty}
+    
+    \vspace{4em}
 
-    \emph{Opaque predicates}
+    \begin{itemize}
+        \item angl.\ \emph{Opaque predicates}
+        \pause{}
+        \item[ ]
+        \item Falešné podmínky
+        \pause{}
+        \item Cykly o jedné iteraci
+    \end{itemize}
+
+    \pause{}
+
+    \vspace{-11em}
+
+    \begin{columns}[T,onlytextwidth]
+
+        \begin{column}{0.48\textwidth}
+        \end{column}
+
+        \begin{column}{0.48\textwidth}
+        \setbeamercolor{block title}{bg=green!60!black, fg=white}
+        \setbeamercolor{block body}{bg=green!10, fg=black}
+        \begin{block}{Příklad falešné podmínky}
+        \begin{minted}[fontsize=\scriptsize]{asm}
+        ...
+        movq -8(%rbp), %rax
+        negq %rax
+        push %rax
+        movq -8(%rbp), %rax
+        notq %rax
+        movq %rax, %rbx
+        pop %rax
+        subq %rbx, %rax
+        test %rax, %rax
+        cmovnz %r10, %rax
+        test %rax, %rax
+        jz __if_end_0002
+        ...
+        \end{minted}
+        \end{block}
+        \end{column}
+
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}
-    \frametitle{Vkládání mrtvého kódu}
-\end{frame}
+    \frametitle{Duplikace kódu}
 
-\begin{frame}
-    \frametitle{Klonování kódu}
+    \begin{itemize}
+        \pause{}
+        \item Vkládání mrtvého kódu
+        \begin{itemize}
+            \pause{}
+            \item Kód, který se nikdy neprovede
+            \pause{}
+            \item Efektivně mrtvý kód
+            \pause{}
+            \item Mrtvý kód v kontextu skutečného kódu
+        \end{itemize}
+        \pause{}
+        \item Klonování kódu
+    \end{itemize}
+
 \end{frame}
 
 \begin{frame}

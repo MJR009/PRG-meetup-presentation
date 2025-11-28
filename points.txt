@@ -83,9 +83,10 @@ pár těch které jsem si sám navrhl
 VÝPOČETNÍ
 
 opaque predicates
+    - kód je převzat z binary_search.jk !!!
 vkládání mrtvého kódu 
-    - skutečně mrtvý kód (nenajde ho rekurzivní průchod)
-    - efektivně mrtvý kód (skoky do kódu, který v daném kontextu nedává smysl)
+    - mrtvý kod v kontextu skutečného kódu
+        - kombinace s opaque predicates
 klonování kódu
 
 SESKUPOVACÍ
