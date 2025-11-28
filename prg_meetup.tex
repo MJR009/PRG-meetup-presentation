@@ -202,10 +202,38 @@
 \begin{frame}
     \frametitle{Zploštění toku řízení}
 
-    Základní bloky
+    \begin{itemize}
+        \item angl.\ \emph{control flow flattening} nebo \emph{table interpretation}
+        \item Úprava založená na tzv.\ základních blocích
+        \item[ ]
+        \item[ ]
+        \item[ ]
+        \item[ ]
+        \item[ ]
+        \item[ ]
+        \item[ ]
+    \end{itemize}
 
-    \emph{control flow flattening}\\
-    \emph{table interpretation}
+    \only<2>{
+        \Image{6}{2}{0.75}{basic_blocks_1.drawio.pdf}
+    }
+
+    \only<3>{
+        \Image{5.9}{2}{0.75}{basic_blocks_2.drawio.pdf}
+    }
+
+    \only<4>{
+        \Image{5.9}{2}{0.75}{basic_blocks_3.drawio.pdf}
+    }
+
+    \only<5>{
+        \Image{6}{2}{0.75}{basic_blocks_4.drawio.pdf}
+    }
+
+    \only<6>{
+        \Image{6}{2}{0.75}{basic_blocks_5.drawio.pdf}
+    }
+
 \end{frame}
 
 \begin{frame}
@@ -251,29 +279,107 @@
     \frametitle{Úprava symbolických informací}
 
     \begin{itemize}
+        \pause{}
         \item Odstranění knihovních volání
+        \pause{}
         \item Šifrování
-        \item Kódovaná pojmenování
-        \item Splývající pojmenování
+        \pause{}
+        \item Kódovaná / plývající pojmenování
+        \begin{itemize}
+            \pause{}
+            \item \_\_\_\_\_\_\_\_\_, \_\_\_\_\_\_\_\_, \_\_\_\_\_\_\_\_\_\_, \dots{}
+            \pause{}
+            \item llIIlIlI, lIlIIIll, IlIllIlI, \dots{}
+        \end{itemize}
+        \pause{}
         \item \textbf{Falšování symbolických informací}
     \end{itemize}
+
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{\textbf{Obfuskace znaménkovsti a datového typu}}
 
+    \vspace{-2em}
+
+    \pause{}
+
+    \begin{columns}[T,onlytextwidth]
+
+        \begin{column}{0.48\textwidth}
+        \begin{block}{\t{fibonacci.jk}}
+        \begin{minted}[fontsize=\scriptsize]{asm}
+            ...
+        __for_start_0000:
+            movq -32(%rbp), %rax
+            push %rax
+            movq COUNT(%rip), %rax
+            movq %rax, %rbx
+            pop %rax
+            cmp %rbx, %rax
+            jge __for_end_0000
+        __for_body_0000:
+            ...
+        \end{minted}
+        \end{block}
+        \end{column}
+
+        \pause{}
+
+        \begin{column}{0.48\textwidth}
+        \setbeamercolor{block title}{bg=green!60!black, fg=white}
+        \setbeamercolor{block body}{bg=green!10, fg=black}
+        \begin{block}{\t{fibonacci.jk} s\\ \t{-O signedness,annote}}
+        \begin{minted}[fontsize=\tiny]{asm}
+            ...
+        __for_start_0000:
+            movq -32(%rbp), %rax
+            push %rax
+            movq COUNT(%rip), %rax
+            movq %rax, %rbx
+            pop %rax
+            cmp %rbx, %rax
+            pushfq ## SIGNED TO UNSIGNED 0 START 
+            pop %rax
+            movq $2176, %rbx
+            andq %rax, %rbx
+            jz __clc_0000
+            cmp $2176, %rbx
+            jz __clc_0000
+            orq $1, %rax
+            jmp __sToU_0000
+        __clc_0000:
+            andq $-2, %rax
+        __sToU_0000:
+            push %rax
+            popfq ## SIGNED TO UNSIGNED 0 END 
+            jae __for_end_0000
+        __for_body_0000:
+            ...;
+        \end{minted}
+        \end{block}
+        \end{column}
+
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}
-    \frametitle{\textbf{Jazyk samotný}}
+    \frametitle{\textbf{Nové prvky jazyka}}
 
     \begin{itemize}
+        \pause{}
         \item \t{foreach}
-        \item \t{redo}
-        \item \t{restart}
+        \pause{}
+        \item \textbf{\t{redo}}
+        \pause{}
+        \item \textbf{\t{restart}}
     \end{itemize}
 
-    Reducibilní / Ireducibilní CFG
+    \pause{}
+
+    \Image{7.5}{0.9}{0.6}{for_example.pdf}
+
 \end{frame}
 
 

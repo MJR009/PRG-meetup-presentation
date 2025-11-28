@@ -91,6 +91,9 @@ klonování kódu
 SESKUPOVACÍ
 
 zploštění toku řízení
+    - nejprve vykreslit koncept základních bloků
+    - NAKRESLIT
+
 loop blocking - rozdělení těla na více částí
 loop unrolling - krátké smyčky s předem známým počtem iterací se transformují na sekvenci
 loop fission - rozdělení na několik částí, co mohou běžet zvlášť se stejným iteračním mechanismem
@@ -117,16 +120,34 @@ Optimalizacemi
     Outlining (VÝPOČETNÍ)
 
 Symbolické informace
-    Odstranění knihovních volání - asi vždy přítomny, nelze je měnit
+    Odstranění knihovních volání
+        - Zmínit že to bylo na REVECH !!!
+        - asi vždy přítomny, nelze je měnit
     Šifrování
     Kódovaná pojmenování
-    Splývající pojmenování
+        - má význam hlavně při manuální analýze
     Falšování symbolických informací
+        - UKÁZAT NA fact.jk
+
+Obfuskace znaménkovosti
+    - TABULKU NA TABULI
+        - ZF == 1            - ==
+        - SF == OF / CF == 0 - <
+        - SF != OF / CF == 1 - >
+
+    - kód je součást fibonacci.jk, pouze hlavička for cyklu
+    - COUNT je globální proměnná v sekci .data
+    - klíčová část je změněné znaménko skoku
+    - zmínit kvalitu v kombinaci s prokládáním !
 
 Jazyk samotný
     foreach
     redo
     restart
+    - PROČ TO JE DOBRÉ - ZMÍNIT REDUCIBILITU CFG
+    - dekompilátory ty konstrukce nerozeznají
+
+    - UKÁZAT PŘÍKLAD VYUŽITÍ - bubble_sort.jk
 
 ---
 
