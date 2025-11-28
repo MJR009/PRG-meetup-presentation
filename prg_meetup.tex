@@ -18,7 +18,7 @@
     \setbeamertemplate{blocks}[rounded][shadow=true]
 
     \title[Základy obfuskace]{Základy obfuskace}
-    \subtitle[]{Aneb jaký užitek má nečitelný kód?}
+    \subtitle[]{aneb Jaký užitek má nečitelný kód?}
     \author[]{Bc.\ Martin Jabůrek}
     \institute[PRG PRG]{Student Programming Language Meetup}
     \date[]{28.\ listopadu\ 2025}
@@ -38,6 +38,8 @@
     \end{tikzpicture}
 }
 
+\renewcommand{\t}[1]{\texttt{#1}}
+
 \begin{document}
 
 \frame{\titlepage}
@@ -50,7 +52,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Proces řešení}
+    \frametitle{Jak to dopadlo?}
 
     \begin{itemize}
         \pause{}
@@ -117,7 +119,8 @@
     \frametitle{Obfuskace}
 
     \textbf{Obfuskace} kódu představuje jednosměrnou transformaci kódu za zachování
-    jeho pozorovatelného chování.
+    jeho pozorovatelného chování. Jejím primárním účelem je učinit kód složitějším,
+    obtížněji čitelným a pochopitelným.
 
 \end{frame}
 
@@ -174,6 +177,8 @@
         \end{itemize}
         \pause{}
         \item Transformace dat
+        \pause{}
+        \item Další netradiční techniky\dots{}
     \end{itemize}
 
 \end{frame}
@@ -181,27 +186,97 @@
 
 
 \begin{frame}
-    \frametitle{Titulek}
+    \frametitle{Neprůhledné predikáty}
 
-    na každou slide\\
-    porovnání dvěma bloky asembleru co to vygeneruje\\
-    nějaká moudrá slova k tomu a crowd participation
+    \emph{Opaque predicates}
+\end{frame}
 
-    opaque predicates, control flow flattening (tabulková interpretace), mrtvý kód, klonování kódu,
-    interleaving, změna kódování, změna struktury polí, expanze literálu,
-    obfuskace optimalizacemi, úprava symbolických informací, střídání instrukcí,
-    inlining, outlining
+\begin{frame}
+    \frametitle{Vkládání mrtvého kódu}
+\end{frame}
 
-    rozšíření podmínek, odstranění knihovních volání a programovacích idiomů,
-    přidání redundatních argumentů, paralelizace kódu, loop blocking, loop unrolling,
-    loop fission
+\begin{frame}
+    \frametitle{Klonování kódu}
+\end{frame}
 
-    obfuskace datového typu, falšování symbolických informací
+\begin{frame}
+    \frametitle{Zploštění toku řízení}
 
-    TODO další věci přímo v jazyce a popsat ten jazyk
-    foreach, redo, restart (proč to obfuskuje), 
+    Základní bloky
+
+    \emph{control flow flattening}\\
+    \emph{table interpretation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Úprava cyklů}
+
+    \begin{itemize}
+        \item Loop blocking
+        \item Loop unrolling
+        \item Loop fission
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Prokládání kódu}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Umělé rozšíření výpočtu}
+
+    \begin{itemize}
+        \item Změna kódování dat
+        \item Změna struktury dat
+        \item Expanze literálů
+        \item Rozšíření podmínek
+        \item Redundantní parametry funkcí
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Obfuskace optimalizacemi}
+
+    \begin{itemize}
+        \item Střídání instrukcí
+        \item Inlining
+        \item Optimální algoritmy
+        \item Paralelizace kódu
+    \end{itemize}
+
+    Opak inliningu \dots{} Outlining
+\end{frame}
+
+\begin{frame}
+    \frametitle{Úprava symbolických informací}
+
+    \begin{itemize}
+        \item Odstranění knihovních volání
+        \item Šifrování
+        \item Kódovaná pojmenování
+        \item Splývající pojmenování
+        \item \textbf{Falšování symbolických informací}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textbf{Obfuskace znaménkovsti a datového typu}}
 
 \end{frame}
+
+\begin{frame}
+    \frametitle{\textbf{Jazyk samotný}}
+
+    \begin{itemize}
+        \item \t{foreach}
+        \item \t{redo}
+        \item \t{restart}
+    \end{itemize}
+
+    Reducibilní / Ireducibilní CFG
+\end{frame}
+
+
 
 \begin{frame}[fragile]{Side-by-Side Assembly Examples}
 

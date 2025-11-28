@@ -52,6 +52,7 @@ POSLAT VÝTISK - obfuskace je kapitola 5 a v přílohách je celá gramatika
 6)
 Popsat jednotlivé části definice
 - Proč je obfuskace lepší? - je robustnější, silnější a není tak principielně jednoduchá
+- pozorovatelné chování - můžeme mít vedlejší efekty
 
 7)
 ke každému druhy uvést nějaké příklady a v čem se liší
@@ -73,14 +74,61 @@ transformace pořadí - změna pořadí instrukcí či bloku pro zhoršení poch
 
 transformace dat - upravují uložení, zpracování a interpretaci dat programu
 
-10)
-TODO
+10 a dále)
+teď už ty samotné obfuskace - mezi obecně používané tady také zařadím
+pár těch které jsem si sám navrhl
 
-ZMÍNIT VLASTNÍ (NAPSAT NA TABULI)
-- odstranění / šifrování / FALŠOVÁNÍ symbolických informací
-- OBFUSKACE ZNAMÉNKOVOSTI
-- nové konstrukce (redo, restart)
+---
 
+VÝPOČETNÍ
+
+opaque predicates
+vkládání mrtvého kódu 
+    - skutečně mrtvý kód (nenajde ho rekurzivní průchod)
+    - efektivně mrtvý kód (skoky do kódu, který v daném kontextu nedává smysl)
+klonování kódu
+
+SESKUPOVACÍ
+
+zploštění toku řízení
+loop blocking - rozdělení těla na více částí
+loop unrolling - krátké smyčky s předem známým počtem iterací se transformují na sekvenci
+loop fission - rozdělení na několik částí, co mohou běžet zvlášť se stejným iteračním mechanismem
+
+POŘADÍ
+
+prokládání kódu
+
+TR. DAT
+
+změna kódování - i šifrování
+změna struktury dat - u mě polí
+expanze literálů
+rozšíření podmínek
+redundantí parametry funkcí
+
+NETRADIČNÍ
+
+Optimalizacemi
+    Střídání instrukcí
+    Inlining
+    Optimální algoritmy
+    Paralelizace kódu - může či nemusí skutečně paralelizovat
+    Outlining (VÝPOČETNÍ)
+
+Symbolické informace
+    Odstranění knihovních volání - asi vždy přítomny, nelze je měnit
+    Šifrování
+    Kódovaná pojmenování
+    Splývající pojmenování
+    Falšování symbolických informací
+
+Jazyk samotný
+    foreach
+    redo
+    restart
+
+---
 
 -1)
 děkuji za pozornost
