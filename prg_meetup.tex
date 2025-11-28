@@ -120,7 +120,7 @@
 
     \textbf{Obfuskace} kódu představuje jednosměrnou transformaci kódu za zachování
     jeho pozorovatelného chování. Jejím primárním účelem je učinit kód složitějším,
-    obtížněji čitelným a pochopitelným.
+    obtížněji čitelným a co nejhůře pochopitelným.
 
 \end{frame}
 
@@ -256,6 +256,17 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Úprava cyklů}
+
+    \begin{itemize}
+        \pause{}
+        \item Rozdělování
+        \pause{}
+        \item Unrolling
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
     \frametitle{Zploštění toku řízení}
 
     \begin{itemize}
@@ -293,27 +304,27 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Úprava cyklů}
-
-    \begin{itemize}
-        \item Loop blocking
-        \item Loop unrolling
-        \item Loop fission
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
     \frametitle{Prokládání kódu}
+
+    \pause{}
+
+    \Image{6}{-0.5}{0.2}{spongebob.jpg}
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Umělé rozšíření výpočtu}
 
     \begin{itemize}
+        \pause{}
         \item Změna kódování dat
+        \pause{}
         \item Změna struktury dat
+        \pause{}
         \item Expanze literálů
+        \pause{}
         \item Rozšíření podmínek
+        \pause{}
         \item Redundantní parametry funkcí
     \end{itemize}
 \end{frame}
@@ -322,13 +333,16 @@
     \frametitle{Obfuskace optimalizacemi}
 
     \begin{itemize}
+        \pause{}
         \item Střídání instrukcí
-        \item Inlining
+        \pause{}
+        \item Inlining\pause{} a outlining
+        \pause{}
         \item Optimální algoritmy
+        \pause{}
         \item Paralelizace kódu
     \end{itemize}
 
-    Opak inliningu \dots{} Outlining
 \end{frame}
 
 \begin{frame}
@@ -438,40 +452,38 @@
 
 \end{frame}
 
-
-
-\begin{frame}[fragile]{Side-by-Side Assembly Examples}
-
-    \begin{columns}[T,onlytextwidth]
-
-        \begin{column}{0.48\textwidth}
-        \begin{block}{Example 1: Move and Add}
-        \begin{minted}[fontsize=\scriptsize]{asm}
-        .intel_syntax noprefix
-        mov rax, 5
-        add rax, 10
-        mov rbx, rax
-        \end{minted}
-        \end{block}
-        \end{column}
-
-        \begin{column}{0.48\textwidth}
-        \setbeamercolor{block title}{bg=green!60!black, fg=white}
-        \setbeamercolor{block body}{bg=green!10, fg=black}
-        \begin{block}{Example 2: Loop Structure}
-        \begin{minted}[fontsize=\scriptsize]{asm}
-        .intel_syntax noprefix
-        mov rcx, 10
-        loop_start:
-            dec rcx
-            jnz loop_start
-        \end{minted}
-        \end{block}
-        \end{column}
-
-    \end{columns}
-
-\end{frame}
+%\begin{frame}[fragile]{Side-by-Side Assembly Examples}
+%
+%    \begin{columns}[T,onlytextwidth]
+%
+%        \begin{column}{0.48\textwidth}
+%        \begin{block}{Example 1: Move and Add}
+%        \begin{minted}[fontsize=\scriptsize]{asm}
+%        .intel_syntax noprefix
+%        mov rax, 5
+%        add rax, 10
+%        mov rbx, rax
+%        \end{minted}
+%        \end{block}
+%        \end{column}
+%
+%        \begin{column}{0.48\textwidth}
+%        \setbeamercolor{block title}{bg=green!60!black, fg=white}
+%        \setbeamercolor{block body}{bg=green!10, fg=black}
+%        \begin{block}{Example 2: Loop Structure}
+%        \begin{minted}[fontsize=\scriptsize]{asm}
+%        .intel_syntax noprefix
+%        mov rcx, 10
+%        loop_start:
+%            dec rcx
+%            jnz loop_start
+%        \end{minted}
+%        \end{block}
+%        \end{column}
+%
+%    \end{columns}
+%
+%\end{frame}
 
 \begin{frame}
     \frametitle{Díky za pozornost!}

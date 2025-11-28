@@ -84,30 +84,32 @@ VÝPOČETNÍ
 
 opaque predicates
     - kód je převzat z binary_search.jk !!!
+
 vkládání mrtvého kódu 
     - mrtvý kod v kontextu skutečného kódu
         - kombinace s opaque predicates
 klonování kódu
+    - UKÁZAT PŘÍKLAD
 
 SESKUPOVACÍ
+
+Úprava cyklů
 
 zploštění toku řízení
     - nejprve vykreslit koncept základních bloků
     - NAKRESLIT
 
-loop blocking - rozdělení těla na více částí
-loop unrolling - krátké smyčky s předem známým počtem iterací se transformují na sekvenci
-loop fission - rozdělení na několik částí, co mohou běžet zvlášť se stejným iteračním mechanismem
-
 POŘADÍ
 
 prokládání kódu
+    - JE TAM TEN MEME !!!
+    - PŘÍKLAD
 
 TR. DAT
 
 změna kódování - i šifrování
-změna struktury dat - u mě polí
-expanze literálů
+změna struktury dat - u mě polí, UKÁZAT (binary_search.jk)
+expanze literálů - UKÁZAT (write_int.jk)
 rozšíření podmínek
 redundantí parametry funkcí
 
@@ -115,10 +117,9 @@ NETRADIČNÍ
 
 Optimalizacemi
     Střídání instrukcí
-    Inlining
+    Inlining A OUTLINING (VÝPOČETNÍ TR.)
     Optimální algoritmy
     Paralelizace kódu - může či nemusí skutečně paralelizovat
-    Outlining (VÝPOČETNÍ)
 
 Symbolické informace
     Odstranění knihovních volání
